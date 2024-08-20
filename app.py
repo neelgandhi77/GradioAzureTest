@@ -18,6 +18,6 @@ import gradio as gr
 app = FastAPI()
 
 with gr.Blocks() as demo:
-    gr.Markdown("Hey Team : Gradio -> working fine!")
+    gr.Markdown("Hey Innovation Team : Gradio -> working fine!")
 
 app = gr.mount_gradio_app(app, demo, path="/")
