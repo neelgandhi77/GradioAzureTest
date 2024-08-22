@@ -17,7 +17,8 @@ app = FastAPI()
 
 def global_variable_value_change_show(value):
     global rules,temp_list
-
+    if(type(temp_list) != list):
+        temp_list = string_to_list_format_generator(temp_list)
     rules["data_preprocessing"]["negative value handling method selected by user"] = "Changed by Neel: " + value
     json.dump(rules,open('rules_modular_approach.json', 'w'), indent=4)
 
