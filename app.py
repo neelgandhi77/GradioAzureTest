@@ -31,7 +31,7 @@ def global_variable_value_change_show(value):
     os.environ["MY_SECRET_KEY"] = temp_list
     #temp_list = string_to_list_format_generator(temp_list)
     #print(temp_list)
-    config.method = "Set by Neel : "+ str(value)
+    config.append("Set by Neel : "+ str(value))
     return gr.Textbox(label="List : ", value= temp_list,visible=True), \
             gr.Textbox(label="JSON : ", value= rules["data_preprocessing"]["negative value handling method selected by user"],visible=True), \
             gr.Textbox(label="Method : ", value=config.method ,visible=True)
