@@ -12,12 +12,12 @@ def list_to_string_format_generator(list):
 # Load the JSON file
 with open('rules_modular_approach.json') as file:
     rules = json.load(file)
-
+temp_list = []
 app = FastAPI()
 
 def global_variable_value_change_show(value):
-    global rules
-    temp_list = []
+    global rules,temp_list
+
     rules["data_preprocessing"]["negative value handling method selected by user"] = "Changed by Neel: " + value
     json.dump(rules,open('rules_modular_approach.json', 'w'), indent=4)
 
@@ -28,7 +28,7 @@ def global_variable_value_change_show(value):
     #print(temp_list)
 
     return gr.Textbox(label="List : ", value= temp_list,visible=True), \
-            gr.Textbox(label="JSON : ", value= rules["data_preprocessing"]["negative value handling method selected by user"],visible=True)
+            gr.Textbox(label="JSON : ", value= rules["data_preprocessing"]["duplicate value handling method selected by user"],visible=True)
 
 with gr.Blocks() as demo:
     gr.Markdown("Hey Team : Gradio -> working fine!")
