@@ -6,7 +6,7 @@ app = FastAPI()
 
 def global_variable_value_change_show(value):
     os.environ["MY_SECRET_KEY"] = value
-    return gr.Textbox(label="Global Variable Value Changed to: " + value,visible=True)
+    return gr.Textbox(label="Global Variable Value Changed to: ", value =  value,visible=True)
 
 with gr.Blocks() as demo:
     gr.Markdown("Hey Team : Gradio -> working fine!")
