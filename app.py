@@ -3,6 +3,7 @@ import gradio as gr
 import os
 import json
 import config
+import pandas as pd
 from pycaret.regression import RegressionExperiment
 
 temp_list = []
