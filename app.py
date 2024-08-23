@@ -37,6 +37,7 @@ def global_variable_value_change_show(value):
 
 with gr.Blocks() as demo:
     gr.Markdown("Hey Team : Gradio -> working fine!")
+    file_input = gr.File(label="Upload Dataset",file_types=['.csv'],file_count="single") 
     global_variable_input = gr.Textbox(label="Input Global Variable")
     current_value_list = gr.Textbox(os.environ.get("MY_SECRET_KEY"),visible=False)
     current_value_json = gr.Textbox(rules["data_preprocessing"]["negative value handling method selected by user"],visible=False)
